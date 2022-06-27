@@ -23,7 +23,7 @@
 /       function to show the number of surfboards of each size sold.                                        /
 /                                                                                                           /
 /   void DisplayTotal(const int iTotalSmall, const int iTotalMedium, const int iTotalLarge);                /
-/       a function to show the total amount of money made./                                                 /
+/       a function to show the total amount of money made.                                                  /
 /                                                                                                           /
 /                                                                                                           /
 //////////////////////////////////////////////////////////////////////////////////////////// BY ISSA HABEEB*/
