@@ -132,7 +132,7 @@ int main()
     int iTotalLarge  = 0;
 
     // Variable used as input for option selection
-    string selection_input;
+    string selection_input = " ";
 
     ShowUsage(); // Executes function
 
