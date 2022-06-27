@@ -42,9 +42,9 @@ void ShowUsage()
 
 
 // A function to sell surfboards.
-void MakePurchase(int& iTotalSmall, int& iTotalMedium, int& iTotalLarge) // Int& bascially returns the variable without return statement
+void MakePurchase(int& iTotalXXXS, int& iTotalSmall, int& iTotalMedium, int& iTotalLarge) // Int& bascially returns the variable without return statement
 {
-    cout << "Please enter the quanity and type(S = small, M = medium, L = large) of surfboard you would like to purchase:";
+    cout << "Please enter the quanity and type(XXXS = squirrel, S = small, M = medium, L = large) of surfboard you would like to purchase:";
 
     // Initilizing variables
     int surfboard_quantity = 0;
@@ -56,7 +56,11 @@ void MakePurchase(int& iTotalSmall, int& iTotalMedium, int& iTotalLarge) // Int&
     cout << "\n" << endl;
 
     // Adds to variables (respective size and quantity) depending on user input
-    if (surfboard_size == "s")
+
+
+    if (surfboard_size == "xxxs")
+        iTotalXXXS += surfboard_quantity;
+    else if (surfboard_size == "s")
         iTotalSmall += surfboard_quantity;
     else if (surfboard_size == "m")
         iTotalMedium += surfboard_quantity;
@@ -66,7 +70,7 @@ void MakePurchase(int& iTotalSmall, int& iTotalMedium, int& iTotalLarge) // Int&
 
 
 // Function to show the number of surfboards of each size sold.
-void DisplayPurchase(const int iTotalSmall, const int iTotalMedium, const int iTotalLarge)
+void DisplayPurchase(const int iTotalXXXS,const int iTotalSmall, const int iTotalMedium, const int iTotalLarge)
 {
     // Two decimal points and real numbers (not scientific notation)
     cout << setprecision(2) << fixed;
@@ -76,6 +80,8 @@ void DisplayPurchase(const int iTotalSmall, const int iTotalMedium, const int iT
         cout << "No purchases made yet." << endl;
 
     // All conditionals are executed, aka no else if statements (based off if quanitity is greater than 0)
+    if (iTotalXXXS != 0)
+        cout << "The total number of xxxs surfboards is " << iTotalXXXS << endl;
     if (iTotalSmall != 0) 
         cout << "The total number of small surfboards is " << iTotalSmall << endl;
     if (iTotalMedium != 0)
@@ -89,22 +95,26 @@ void DisplayPurchase(const int iTotalSmall, const int iTotalMedium, const int iT
 
 
 // A function to show the total amount of money made.
-void DisplayTotal(const int iTotalSmall, const int iTotalMedium, const int iTotalLarge)
+void DisplayTotal(const int iTotalXXXS, const int iTotalSmall, const int iTotalMedium, const int iTotalLarge)
 {
     // Two decimal points and real numbers (not scientific notation)
     cout << setprecision(2) << fixed;
 
     // Constant variables for cost
+    const double XXXS_COST = 50.00;
     const double SMALL_COST = 175.00;
     const double MEDIUM_COST = 190.00;
     const double LARGE_COST = 200.00;
 
     // Variables to determine cost for each size and quanitity
+    double xxxs_cost = (iTotalXXXS * XXXS_COST);
     double small_total = (iTotalSmall * SMALL_COST);
     double medium_total = (iTotalMedium * MEDIUM_COST);
     double large_total = (iTotalLarge * LARGE_COST);
 
     // Outputs cost if quanitity is not 0 for each size.
+    if (iTotalXXXS != 0)
+        cout << "The total number of small surfboards is " << iTotalXXXS << " at a total of $" << xxxs_cost << endl;
     if (iTotalSmall != 0)
         cout << "The total number of small surfboards is " << iTotalSmall << " at a total of $" << small_total << endl;
     if (iTotalMedium != 0)
@@ -113,7 +123,7 @@ void DisplayTotal(const int iTotalSmall, const int iTotalMedium, const int iTota
         cout << "The total number of large surfboards is " << iTotalLarge << " at a total of $" << large_total << endl;
 
     // Total
-    double total_cost = small_total + medium_total + large_total;
+    double total_cost = xxxs_cost + small_total + medium_total + large_total;
     // Checks if purchases were made
     if (total_cost == 0)
         cout << "No purchases made yet." << "\n" << endl;
@@ -127,6 +137,7 @@ void DisplayTotal(const int iTotalSmall, const int iTotalMedium, const int iTota
 int main()
 {
     // Inititlizing variables (will be passed into arguments for functions)
+    int iTotalXXXS   = 0;
     int iTotalSmall  = 0;
     int iTotalMedium = 0;
     int iTotalLarge  = 0;
@@ -157,21 +168,21 @@ int main()
         // To purchase a surfboard press 'P'
         else if (selection_input == "p")
         {
-            MakePurchase(iTotalSmall, iTotalMedium, iTotalLarge); // Executes function
+            MakePurchase(iTotalXXXS, iTotalSmall, iTotalMedium, iTotalLarge); // Executes function
         }
 
 
         // To display current purchases press 'C'
         else if (selection_input == "c")
         {
-            DisplayPurchase(iTotalSmall, iTotalMedium, iTotalLarge); // Executes function
+            DisplayPurchase(iTotalXXXS, iTotalSmall, iTotalMedium, iTotalLarge); // Executes function
         }
 
 
         // To display tolal amount due press 'T'
         else if (selection_input == "t")
         {
-            DisplayTotal(iTotalSmall, iTotalMedium, iTotalLarge); // Executes function
+            DisplayTotal(iTotalXXXS, iTotalSmall, iTotalMedium, iTotalLarge); // Executes function
         }
 
 
