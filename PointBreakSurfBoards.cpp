@@ -73,16 +73,19 @@ void DisplayPurchase(const int iTotalSmall, const int iTotalMedium, const int iT
 
     // Checks if anything is purchased yet.
     if ((iTotalSmall == 0) && (iTotalMedium == 0) && (iTotalLarge == 0))
-        cout << "No purchases made yet." << "\n" << endl;
+        cout << "No purchases made yet." << endl;
 
     // All conditionals are executed, aka no else if statements (based off if quanitity is greater than 0)
     if (iTotalSmall != 0) 
-        cout << "The total number of small surfboards is " << iTotalSmall << "\n" << endl;
+        cout << "The total number of small surfboards is " << iTotalSmall << endl;
     if (iTotalMedium != 0)
-        cout << "The total number of medium surfboards is " << iTotalMedium << "\n" << endl;
+        cout << "The total number of medium surfboards is " << iTotalMedium << endl;
     if (iTotalLarge != 0)
-        cout << "The total number of large surfboards is " << iTotalLarge << "\n" << endl;
+        cout << "The total number of large surfboards is " << iTotalLarge << endl;
+    
+    cout << endl;
 }
+
 
 
 // A function to show the total amount of money made.
@@ -116,7 +119,7 @@ void DisplayTotal(const int iTotalSmall, const int iTotalMedium, const int iTota
         cout << "No purchases made yet." << "\n" << endl;
     // Total cost if purchases were made
     else
-        cout << "Amount due:  $" << total_cost << "\n" << endl;
+        cout << "Amount due: $" << total_cost << "\n" << endl;
 }
 
 
