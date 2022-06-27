@@ -179,7 +179,7 @@ int main()
         else if (selection_input == "q")
         {
             cout << "Thank you" << endl;
-            break;
+            break; // Breaks the loop
         }
 
     }
