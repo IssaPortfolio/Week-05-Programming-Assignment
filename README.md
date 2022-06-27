@@ -19,3 +19,6 @@ Your program must consist of "int main()" and at least the following functions:
     • void DisplayTotal(const int iTotalSmall, const int iTotalMedium, const int iTotalLarge);
       • a function to show the total amount of money made.
     
+------------------------------------------------------------------------------------------------------------------
+
+Added a new surfboard size, "XXXS," for squirrels, and cost is $50.00
