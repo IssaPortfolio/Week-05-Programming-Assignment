@@ -128,7 +128,7 @@ void DisplayTotal(const int iTotalXXXS, const int iTotalSmall, const int iTotalM
 
     // Outputs cost if quanitity is not 0 for each size.
     if (iTotalXXXS != 0)
-        cout << "The total number of small surfboards is " << iTotalXXXS << " at a total of $" << xxxs_cost << endl;
+        cout << "The total number of xxxs surfboards is " << iTotalXXXS << " at a total of $" << xxxs_cost << endl;
     if (iTotalSmall != 0)
         cout << "The total number of small surfboards is " << iTotalSmall << " at a total of $" << small_total << endl;
     if (iTotalMedium != 0)
